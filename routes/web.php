@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('login');
 });
+
+Route::get('/login', [UsuarioController::class, 'login'])->name('login');
+Route::get('/registro', [UsuarioController::class, 'registro'])->name('registro');
+Route::post('/registroForm', [UsuarioController::class, 'registroForm'])->name('registro.form');
+Route::post('/verificarCredenciales', [UsuarioController::class, 'verificarCredenciales'])->name('login.form');
+Route::get('/cerrarSesion', [UsuarioController::class, 'cerrarSesion'])->name('cerrar.sesion');
+Route::get('/recuperar', [UsuarioController::class, 'recuperar'])->name('correo');
+Route::post('/recuperarContrasenia', [UsuarioController::class, 'recuperarContrasenia'])->name('recuperar.contrasenia');
+Route::post('/codigo', [UsuarioController::class, 'codigo'])->name('contrasenia');
+Route::post('/cambio/codigo', [UsuarioController::class, 'cambio'])->name('cambio');

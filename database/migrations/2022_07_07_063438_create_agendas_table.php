@@ -13,16 +13,21 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('usuarios', function (Blueprint $table) {
+        Schema::create('agendas', function (Blueprint $table) {
             $table->id();
             $table->string('nombre',64);
             $table->string('paterno',64);
             $table->string('materno',64);
-            $table->string('correo',256);
-            $table->text('pass');
-            $table->dateTime('nacimiento');
-            $table->string('telefono',12);
+            $table->string('Direccion',64);
+            $table->string('Telefono',64);
+            $table->string('Correo',64);
+            $table->unsignedBigInteger('usuario_id')->nullable();
+
             $table->timestamps();
+
+            $table->foreign('grupo_id')->references('id')->on('grupos')->onDelete('set null');
+            $table->unsignedBigInteger('grupo_id')->nullable();
+            $table->foreign('usuario_id')->references('id')->on('usuarios')->onDelete('set null');
         });
     }
 
@@ -33,6 +38,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('usuarios');
+        Schema::dropIfExists('agendas');
     }
 };

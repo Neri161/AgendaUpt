@@ -13,15 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('usuarios', function (Blueprint $table) {
+        Schema::create('citas', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre',64);
-            $table->string('paterno',64);
-            $table->string('materno',64);
-            $table->string('correo',256);
-            $table->text('pass');
-            $table->dateTime('nacimiento');
-            $table->string('telefono',12);
+            $table->string('nombre');
+            $table->date('Fecha');
+            $table->string('hora');
+            $table->unsignedBigInteger('usuario_id')->nullable();
+            $table->foreign('usuario_id')->references('id')->on('usuarios')->onDelete('set null');
             $table->timestamps();
         });
     }
@@ -33,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('usuarios');
+        Schema::dropIfExists('citas');
     }
 };
