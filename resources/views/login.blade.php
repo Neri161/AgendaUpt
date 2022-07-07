@@ -41,7 +41,7 @@
                             @endif
                         @endif
                         <div class="form-group">
-                            <label for="correo">Correo o Usuario:</label>
+                            <label for="correo">Correo:</label>
                             <div class="input-group flex-nowrap">
                                 <span class="input-group-text" id="addon-wrapping"><i
                                         class="fas fa-user-friends"></i></span>
@@ -54,7 +54,7 @@
                             <label for="password">Contraseña:</label>
                             <div class="input-group flex-nowrap">
                                 <span class="input-group-text" id="addon-wrapping"><i class="fas fa-lock"></i></span>
-                                <input type="password" name="password" id="password" class="form-control"
+                                <input type="password" name="pass" id="pass" class="form-control"
                                        placeholder="password" aria-label="password" aria-describedby="password">
                                 <div class="input-group-append">
                                     <button id="show_password" class="btn btn-primary" type="button"

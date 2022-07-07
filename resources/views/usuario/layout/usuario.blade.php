@@ -66,11 +66,11 @@
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <!--  <h6 class="collapse-header">Custom Components:</h6>-->
-                    <a class="collapse-item" href="{{route('usuario.registrousuario')}}"><i class="fas fa-users"></i>
+                    <a class="collapse-item" href=""><i class="fas fa-users"></i>
                        Agregar Usuario</a>
-                    <a class="collapse-item" href="{{route('usuario.gerencia')}}"><i class="fas fa-user-tie"></i>
+                    <a class="collapse-item" href=""><i class="fas fa-user-tie"></i>
                        Agregar Gerencia</a>
-                    <a class="collapse-item" href="{{route('usuario.curso')}}"><i class="fa fa-file"></i>
+                    <a class="collapse-item" href=""><i class="fa fa-file"></i>
                        Agregar Curso</a>
                 </div>
             </div>
@@ -88,15 +88,15 @@
                 <div class="bg-white py-2 collapse-inner rounded">
                     <!--<h6 class="collapse-header">Custom Utilities:</h6>-->
 
-                <!--<a class="collapse-item" href="{{route('usuario.editarusuario')}}"><i class="fas fa-user-tie"></i>
+                <!--<a class="collapse-item" href=""><i class="fas fa-user-tie"></i>
                         Lista Usuarios
                     </a>-->
-                    <a class="collapse-item" href="{{route('list.user')}}"><i class="fas fa-user-tie"></i>
+                    <a class="collapse-item" href=""><i class="fas fa-user-tie"></i>
                         Lista Usuarios</a>
-                    <a class="collapse-item" href="{{route('usuario.listagerencias')}}"><i class="fas fa-user-tie"></i>
+                    <a class="collapse-item" href=""><i class="fas fa-user-tie"></i>
                         Lista de Gerencias</a>
 
-                        <a class="collapse-item" href="{{route('usuario.Mostrarvideos')}}"><i class="fas fa-user-tie"></i>
+                        <a class="collapse-item" href=""><i class="fas fa-user-tie"></i>
                             videos</a>
                 </div>
             </div>
@@ -218,16 +218,16 @@
                             <span
                                 class="mr-2 d-none d-lg-inline text-gray-600 small">{{session('usuario')->nombre}} {{session('usuario')->paterno}}</span>
                             <img class="img-profile rounded-circle"
-                                 src="{{session('usuario')->foto}}">
+                                 src="">
                         </a>
                         <!-- Dropdown - User Information -->
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                              aria-labelledby="userDropdown">
-                            <a class="dropdown-item" href="{{route('usuario.datosusuario')}}">
+                            <a class="dropdown-item" href="">
                                 <i class="fa fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Perfil
                             </a>
-                            <a class="dropdown-item" href="{{route('usuario.editarusuario')}}">
+                            <a class="dropdown-item" href="">
                                 <i class="fa fa-cog text-gray-400"></i>
                                 Editar perfil
                             </a>

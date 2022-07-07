@@ -31,7 +31,7 @@
                             <h1 class="titulo">Inicio De Sesión</h1>
                         </div>
                     </div>
-                    <form action="{{route('login.form')}}" method="post">
+                    <form action="{{route('registro.form')}}" method="post">
                         {{csrf_field()}}
                         @if(isset($estatus))
                             @if($estatus == "success")
@@ -39,6 +39,15 @@
                             @elseif($estatus == "error")
                                 <label class="bg-danger text-white col-md-12 text-center">{{$mensaje}}</label>
                             @endif
+                        @endif
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
                         @endif
                         <div class="form-group">
                             <label for="nombre">Nombre:</label>
@@ -121,14 +130,14 @@
                                            placeholder="Confirma tu contraseña" aria-label="pass" aria-describedby="password">
                                     <div class="input-group-append">
                                         <button id="show_password" class="btn btn-primary" type="button"
-                                                onclick="mostrarPassword()"><span class="fa fa-eye-slash icon"></span>
+                                                onclick="mostrarPassword2()"><span class="fa fa-eye-slash icon2"></span>
                                         </button>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-12 text-center ">
                                 <button type="submit" id="btnIniciar" class="btn btn-block mybtn btn-primary tx-tfm">
-                                    Iniciar Sesión
+                                    Registrar
                                 </button>
                             </div>
                             <div class="form-group text-center">
@@ -155,13 +164,23 @@
 <script src="js/verificar.js"></script>
 <script type="text/javascript">
     function mostrarPassword() {
-        var cambio = document.getElementById("password");
+        var cambio = document.getElementById("pass");
         if (cambio.type == "password") {
             cambio.type = "text";
             $('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
         } else {
             cambio.type = "password";
             $('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
+        }
+    }
+    function mostrarPassword2() {
+        var cambio = document.getElementById("pass2");
+        if (cambio.type == "password") {
+            cambio.type = "text";
+            $('.icon2').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
+        } else {
+            cambio.type = "password";
+            $('.icon2').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
         }
     }
 </script>

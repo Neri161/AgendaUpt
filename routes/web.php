@@ -21,10 +21,12 @@ Route::get('/', function () {
 
 Route::get('/login', [UsuarioController::class, 'login'])->name('login');
 Route::get('/registro', [UsuarioController::class, 'registro'])->name('registro');
-Route::post('/registroForm', [UsuarioController::class, 'registroForm'])->name('registro.form');
+Route::post('/registroForm', [UsuarioController::class, 'registrar'])->name('registro.form');
 Route::post('/verificarCredenciales', [UsuarioController::class, 'verificarCredenciales'])->name('login.form');
 Route::get('/cerrarSesion', [UsuarioController::class, 'cerrarSesion'])->name('cerrar.sesion');
 Route::get('/recuperar', [UsuarioController::class, 'recuperar'])->name('correo');
 Route::post('/recuperarContrasenia', [UsuarioController::class, 'recuperarContrasenia'])->name('recuperar.contrasenia');
 Route::post('/codigo', [UsuarioController::class, 'codigo'])->name('contrasenia');
 Route::post('/cambio/codigo', [UsuarioController::class, 'cambio'])->name('cambio');
+
+Route::get('/Inicio', [UsuarioController::class, 'inicio'])->name('usuario.inicio');
