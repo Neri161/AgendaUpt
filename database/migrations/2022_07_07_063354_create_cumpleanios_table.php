@@ -15,6 +15,11 @@ return new class extends Migration
     {
         Schema::create('cumpleanios', function (Blueprint $table) {
             $table->id();
+            $table->string('nombre');
+            $table->date('fecha');
+            $table->string('Mensaje');
+            $table->unsignedBigInteger('usuario_id')->nullable();
+            $table->foreign('usuario_id')->references('id')->on('usuarios')->onDelete('set null');
             $table->timestamps();
         });
     }
