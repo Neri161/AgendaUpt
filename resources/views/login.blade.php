@@ -87,15 +87,15 @@
         </div>
     </div>
 </div>
-<script src="js/jquery.min.js"></script>
-<script src="popper/popper.min.js"></script>
+<script src="public/js/jquery.min.js"></script>
+<script src="public/popper/popper.min.js"></script>
 <!--    Plugin sweet Alert 2  -->
-<script src="plugins/sweetAlert2/sweetalert2.all.min.js"></script>
+<script src="public/plugins/sweetAlert2/sweetalert2.all.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
-<script src="js/login.js"></script>
+<script src="public/js/login.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="js/verificar.js"></script>
+<script src="public/js/verificar.js"></script>
 <script type="text/javascript">
     function mostrarPassword() {
         var cambio = document.getElementById("password");

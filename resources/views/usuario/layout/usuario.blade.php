@@ -10,6 +10,7 @@
     <meta name="author" content="">
     <meta name="csrf-token" content="{{csrf_token()}}">
     <link href="/img/e-learning-icon.ico" rel="icon">
+    <script src="https://kit.fontawesome.com/7c0f4c4dd5.js" crossorigin="anonymous"></script>
 
 @yield('titulo')
 
@@ -34,9 +35,9 @@
         <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('usuario.inicio')}}">
             <div class="sidebar-brand-icon rotate-n-15">
-                <i class="fas fa-laptop"></i>
+                <i class="fas fa-calendar-alt"></i>
             </div>
-            <div class="sidebar-brand-text mx-3">Refividrio</div>
+            <div class="sidebar-brand-text mx-3">Agenda Digital</div>
         </a>
 
         <!-- Divider -->
@@ -66,12 +67,12 @@
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <!--  <h6 class="collapse-header">Custom Components:</h6>-->
-                    <a class="collapse-item" href=""><i class="fas fa-users"></i>
-                       Agregar Usuario</a>
-                    <a class="collapse-item" href=""><i class="fas fa-user-tie"></i>
-                       Agregar Gerencia</a>
-                    <a class="collapse-item" href=""><i class="fa fa-file"></i>
-                       Agregar Curso</a>
+                    <a class="collapse-item" href="{{route('usuario.rcontacto')}}"><i class="fas fa-users"></i>
+                       Agregar Contacto</a>
+                    <a class="collapse-item" href=""><i class="fas fa-birthday-cake"></i>
+                       Agregar Cumpleaño</a>
+                    <a class="collapse-item" href=""><i class="fas fa-handshake"></i>
+                       Agregar Cita</a>
                 </div>
             </div>
         </li>
@@ -91,13 +92,13 @@
                 <!--<a class="collapse-item" href=""><i class="fas fa-user-tie"></i>
                         Lista Usuarios
                     </a>-->
-                    <a class="collapse-item" href=""><i class="fas fa-user-tie"></i>
-                        Lista Usuarios</a>
-                    <a class="collapse-item" href=""><i class="fas fa-user-tie"></i>
-                        Lista de Gerencias</a>
+                    <a class="collapse-item" href=""><i class="fas fa-users"></i>
+                        Lista Contactos</a>
+                    <a class="collapse-item" href=""><i class="fas fa-birthday-cake"></i>
+                        Lista Cumpleaños</a>
 
-                        <a class="collapse-item" href=""><i class="fas fa-user-tie"></i>
-                            videos</a>
+                        <a class="collapse-item" href=""><i class="fas fa-handshake"></i>
+                            Lista de Citas</a>
                 </div>
             </div>
         </li>
@@ -110,26 +111,6 @@
         </div>
         -->
         <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-               aria-expanded="true" aria-controls="collapsePages">
-                <i class="fa fa-file"></i>
-                <span>Cursos</span>
-            </a>
-            <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <!--<h6 class="collapse-header">Login Screens:</h6>-->
-                    <a class="collapse-item" href="login.html">Informacion General</a>
-                    <a class="collapse-item" href="register.html">Register</a>
-                    <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                    <div class="collapse-divider"></div>
-                    <h6 class="collapse-header">Other Pages:</h6>
-                    <a class="collapse-item" href="404.html">404 Page</a>
-                    <a class="collapse-item" href="blank.html">Blank Page</a>
-                </div>
-            </div>
-        </li>
-
         <!-- Nav Item - Charts
         <li class="nav-item">
             <a class="nav-link" href="charts.html">
@@ -143,8 +124,6 @@
                 <span>Tables</span></a>
         </li>
         -->
-        <!-- Divider -->
-        <hr class="sidebar-divider d-none d-md-block">
 
         <!-- Sidebar Toggler (Sidebar) -->
         <div class="text-center d-none d-md-inline">
@@ -169,19 +148,6 @@
                     <i class="fa fa-bars"></i>
                 </button>
 
-                <!-- Topbar Search -->
-                <form
-                    class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                    <div class="input-group">
-                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                               aria-label="Search" aria-describedby="basic-addon2">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary" type="button">
-                                <i class="fas fa-search fa-sm"></i>
-                            </button>
-                        </div>
-                    </div>
-                </form>
 
                 <!-- Topbar Navbar -->
                 <ul class="navbar-nav ml-auto">

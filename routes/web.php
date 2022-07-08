@@ -29,4 +29,10 @@ Route::post('/recuperarContrasenia', [UsuarioController::class, 'recuperarContra
 Route::post('/codigo', [UsuarioController::class, 'codigo'])->name('contrasenia');
 Route::post('/cambio/codigo', [UsuarioController::class, 'cambio'])->name('cambio');
 
-Route::get('/Inicio', [UsuarioController::class, 'inicio'])->name('usuario.inicio');
+
+Route::prefix('/usuario')->middleware("VerificarUsuario")->group(function () {
+    Route::get('/inicio', [UsuarioController::class, 'inicio'])->name('usuario.inicio');
+    Route::get('/registrocontacto', [UsuarioController::class, 'registroContacto'])->name('usuario.rcontacto');
+});
+
+
