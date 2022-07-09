@@ -27,7 +27,14 @@ class UsuarioController extends Controller
     {
         return view('usuario.registrarContacto');
     }
-
+    public function registroCumpleanio()
+    {
+        return view('usuario.registrarCumpleanio');
+    }
+    public function registroCita()
+    {
+        return view('usuario.registrarCita');
+    }
     public function recuperar()
     {
         return view('recuperar');

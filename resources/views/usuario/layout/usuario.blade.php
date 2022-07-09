@@ -69,9 +69,9 @@
                     <!--  <h6 class="collapse-header">Custom Components:</h6>-->
                     <a class="collapse-item" href="{{route('usuario.rcontacto')}}"><i class="fas fa-users"></i>
                        Agregar Contacto</a>
-                    <a class="collapse-item" href=""><i class="fas fa-birthday-cake"></i>
+                    <a class="collapse-item" href="{{route('usuario.rcumple')}}"><i class="fas fa-birthday-cake"></i>
                        Agregar Cumpleaño</a>
-                    <a class="collapse-item" href=""><i class="fas fa-handshake"></i>
+                    <a class="collapse-item" href="{{route('usuario.rcita')}}"><i class="fas fa-handshake"></i>
                        Agregar Cita</a>
                 </div>
             </div>

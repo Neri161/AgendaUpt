@@ -22,7 +22,7 @@
         <div class="container-fluid" id="sticky-sidebar">
                 <div class="col-md-9">
                     <div class="header text-justify">
-                        <h1>Agregar Contacto</h1>
+                        <h1>Agregar Cita</h1>
                     </div>
                 </div>
                 <div class="inside">
