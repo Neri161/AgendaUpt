@@ -1,7 +1,7 @@
 @extends('usuario.layout.usuario')
 
 @section('titulo')
-    <title>Registrar Usuario</title>
+    <title>Registrar Contacto</title>
 @endsection
 
 @section('CSS')

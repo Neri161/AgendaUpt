@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('materno',64);
             $table->string('correo',256);
             $table->text('pass');
+            $table->text('token_recovery')->nullable();
             $table->dateTime('nacimiento');
             $table->string('telefono',12);
             $table->timestamps();

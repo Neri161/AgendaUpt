@@ -68,11 +68,11 @@
                 <div class="bg-white py-2 collapse-inner rounded">
                     <!--  <h6 class="collapse-header">Custom Components:</h6>-->
                     <a class="collapse-item" href="{{route('usuario.rcontacto')}}"><i class="fas fa-users"></i>
-                       Agregar Contacto</a>
+                        Agregar Contacto</a>
                     <a class="collapse-item" href="{{route('usuario.rcumple')}}"><i class="fas fa-birthday-cake"></i>
-                       Agregar Cumpleaño</a>
+                        Agregar Cumpleaño</a>
                     <a class="collapse-item" href="{{route('usuario.rcita')}}"><i class="fas fa-handshake"></i>
-                       Agregar Cita</a>
+                        Agregar Cita</a>
                 </div>
             </div>
         </li>
@@ -89,16 +89,15 @@
                 <div class="bg-white py-2 collapse-inner rounded">
                     <!--<h6 class="collapse-header">Custom Utilities:</h6>-->
 
-                <!--<a class="collapse-item" href=""><i class="fas fa-user-tie"></i>
-                        Lista Usuarios
-                    </a>-->
+                    <!--<a class="collapse-item" href=""><i class="fas fa-user-tie"></i>
+                            Lista Usuarios
+                        </a>-->
                     <a class="collapse-item" href=""><i class="fas fa-users"></i>
                         Lista Contactos</a>
                     <a class="collapse-item" href=""><i class="fas fa-birthday-cake"></i>
                         Lista Cumpleaños</a>
-
-                        <a class="collapse-item" href=""><i class="fas fa-handshake"></i>
-                            Lista de Citas</a>
+                    <a class="collapse-item" href=""><i class="fas fa-handshake"></i>
+                        Lista de Citas</a>
                 </div>
             </div>
         </li>
@@ -183,8 +182,7 @@
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span
                                 class="mr-2 d-none d-lg-inline text-gray-600 small">{{session('usuario')->nombre}} {{session('usuario')->paterno}}</span>
-                            <img class="img-profile rounded-circle"
-                                 src="">
+                            <i class="fas fa-user-cog"></i>
                         </a>
                         <!-- Dropdown - User Information -->
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"

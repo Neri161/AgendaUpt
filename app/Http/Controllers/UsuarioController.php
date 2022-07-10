@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\RecuperarMailable;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
@@ -127,7 +129,6 @@ class UsuarioController extends Controller
         $usuario->token_recovery = $codigo;
         $usuario->save();
         Mail::to($usuario->correo)->send(new RecuperarMailable($usuario));
-        Mail::to($usuario->correo)->send(new RecuperarMailable($usuario));
         return view('codigo');
     }
     public function codigo(Request $datos)
@@ -152,7 +153,7 @@ class UsuarioController extends Controller
             return view("contrasenia", ["estatus" => "error", "mensaje" => "¡Las contraseñas no son iguales!"]);
 
         $usuario = Usuario::where('token_recovery', $datos->codigo)->first();
-        $usuario->password = password_hash($datos->pass1, PASSWORD_DEFAULT, ['cost' => 5]);
+        $usuario->pass = password_hash($datos->pass1, PASSWORD_DEFAULT, ['cost' => 5]);
         $usuario->token_recovery = null;
         $usuario->save();
 
