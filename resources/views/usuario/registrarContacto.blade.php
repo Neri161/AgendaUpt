@@ -10,7 +10,7 @@
 
 @section('contenido')
     <!--  Formulario registrar usuario -->
-    <form action="" method="post" name="registration">
+    <form action="{{route('rcontacto')}}" method="post" name="registration">
         {{csrf_field()}}
         @if(isset($estatus))
             @if($estatus == "success")
@@ -18,6 +18,15 @@
             @elseif($estatus == "error")
                 <label class="bg-danger text-white col-md-12 text-center">{{$mensaje}}</label>
             @endif
+        @endif
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
         @endif
         <div class="container-fluid" id="sticky-sidebar">
             <div class="col-md-9">
@@ -33,7 +42,7 @@
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
                             <input type="text" name="paterno" class="form-control"
-                                   placeholder="Ingresa Apellido Paterno" id="paterno">
+                                   placeholder="Ingresa Apellido Paterno" id="paterno" required>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -41,7 +50,7 @@
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
                             <input type="text" name="materno" class="form-control"
-                                   placeholder="Ingresa Apellido Materno" id="materno">
+                                   placeholder="Ingresa Apellido Materno" id="materno" required>
 
                         </div>
                     </div>
@@ -53,7 +62,7 @@
                         <label for="nombre">Nombre:</label>
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
-                            <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Ingresa Nombre">
+                            <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Ingresa Nombre" required>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -61,7 +70,7 @@
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
                             <input type="text" name="Direccion" id="Direccion" class="form-control"
-                                   placeholder="Ingresa Direccion">
+                                   placeholder="Ingresa Direccion" required>
                             <!--<span> id="estadoUsuario</span>-->
                         </div>
                     </div>
@@ -71,14 +80,15 @@
                         <label for="correo" class="mtop16">Correo:</label>
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="basic-addon1">@</span>
-                            <input type="email" id="correo" name="correo" class="form-control" placeholder="Ingresa Correo">
+                            <input type="email" id="correo" name="correo" class="form-control" placeholder="Ingresa Correo" required>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <label for="telefono" class="mtop16">Telefono:</label>
                         <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon1">@</span>
-                            <input type="number" id="telefono" name="telefono" class="form-control" placeholder="Ingresa Correo">
+                            <span class="input-group-text" id="basic-addon1"><i class="fas fa-mobile"></i></span>
+                            <input type="number" id="telefono" name="telefono" class="form-control" placeholder="Ingresa Telefono" required>
+                            <input type="hidden" id="id" name="id" value="{{session('usuario')->id}}">
                         </div>
                     </div>
                 </div>

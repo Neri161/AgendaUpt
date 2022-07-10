@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AgendaController;
 use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 
@@ -33,6 +34,7 @@ Route::post('/cambio/codigo', [UsuarioController::class, 'cambio'])->name('cambi
 Route::prefix('/usuario')->middleware("VerificarUsuario")->group(function () {
     Route::get('/inicio', [UsuarioController::class, 'inicio'])->name('usuario.inicio');
     Route::get('/registrocontacto', [UsuarioController::class, 'registroContacto'])->name('usuario.rcontacto');
+    Route::post('/registrocontacto', [AgendaController::class, 'registro'])->name('rcontacto');
     Route::get('/registrocumple', [UsuarioController::class, 'registroCumpleanio'])->name('usuario.rcumple');
     Route::get('/registrocita', [UsuarioController::class, 'registroCita'])->name('usuario.rcita');
 });
