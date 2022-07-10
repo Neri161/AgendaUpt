@@ -26,13 +26,16 @@
                 </div>
             </div>
             <div class="inside">
+                <input type="hidden" id="id" name="id" value="{{session('usuario')->id}}">
                 <div class="row">
                     <div class="col-md-6">
-                        <label for="nombre">Nombre:</label>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
-                            <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Ingresa Nombre">
-                        </div>
+                        <label for="grupo">Nombre:</label>
+                        <select class="browser-default custom-select" name="grupo" id="grupo">
+                            <option selected="">Selecciona El Nombre</option>
+                            @foreach($contacto as $contacto)
+                                <option value="{{$contacto->nombre}} {{$contacto->paterno}} {{$contacto->materno}}">{{$contacto->nombre}} {{$contacto->paterno}} {{$contacto->materno}}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="col-md-6">
                         <label for="fecha" class="mtop16">Fecha:</label>

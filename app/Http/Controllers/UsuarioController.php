@@ -32,9 +32,10 @@ class UsuarioController extends Controller
         $grupo = Grupo::all();
         return view('usuario.registrarContacto',["grupo"=>$grupo]);
     }
-    public function registroCumpleanio()
+    public function registroCumpleanio($id)
     {
-        return view('usuario.registrarCumpleanio');
+        $contacto = Agenda::where('usuario_id',$id)->get();
+        return view('usuario.registrarCumpleanio',['contacto'=>$contacto]);
     }
     public function registroCita()
     {
