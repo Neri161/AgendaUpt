@@ -94,7 +94,7 @@
                         </a>-->
                     <a class="collapse-item" href="{{route('usuario.lcontacto')}}/{{session('usuario')->id}}"><i class="fas fa-users"></i>
                         Lista Contactos</a>
-                    <a class="collapse-item" href="{{route('usuario.lcontacto')}}/{{session('usuario')->id}}"><i class="fas fa-birthday-cake"></i>
+                    <a class="collapse-item" href="{{route('usuario.lcumple')}}/{{session('usuario')->id}}"><i class="fas fa-birthday-cake"></i>
                         Lista Cumpleaños</a>
                     <a class="collapse-item" href="{{route('usuario.lcontacto')}}/{{session('usuario')->id}}"><i class="fas fa-handshake"></i>
                         Lista de Citas</a>

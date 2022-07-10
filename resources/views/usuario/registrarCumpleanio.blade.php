@@ -10,7 +10,7 @@
 
 @section('contenido')
     <!--  Formulario registrar usuario -->
-    <form action="" method="post" name="registration">
+    <form action="{{route('rcumple')}}" method="post" name="registration">
         {{csrf_field()}}
         @if(isset($estatus))
             @if($estatus == "success")
@@ -18,6 +18,15 @@
             @elseif($estatus == "error")
                 <label class="bg-danger text-white col-md-12 text-center">{{$mensaje}}</label>
             @endif
+        @endif
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
         @endif
         <div class="container-fluid" id="sticky-sidebar">
             <div class="col-md-9">
@@ -29,8 +38,8 @@
                 <input type="hidden" id="id" name="id" value="{{session('usuario')->id}}">
                 <div class="row">
                     <div class="col-md-6">
-                        <label for="grupo">Nombre:</label>
-                        <select class="browser-default custom-select" name="grupo" id="grupo">
+                        <label for="nombre">Nombre:</label>
+                        <select class="browser-default custom-select" name="nombre" id="nombre">
                             <option selected="">Selecciona El Nombre</option>
                             @foreach($contacto as $contacto)
                                 <option value="{{$contacto->nombre}} {{$contacto->paterno}} {{$contacto->materno}}">{{$contacto->nombre}} {{$contacto->paterno}} {{$contacto->materno}}</option>

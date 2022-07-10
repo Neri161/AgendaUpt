@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\RecuperarMailable;
+use App\Models\Cumpleanios;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
@@ -49,6 +50,11 @@ class UsuarioController extends Controller
     {
         $contacto = Agenda::where('usuario_id',$id)->get();
         return view('usuario.listaContacto',["contacto"=>$contacto]);
+    }
+    public function listaCumple($id)
+    {
+        $cumple= Cumpleanios::where('usuario_id',$id)->get();
+        return view('usuario.listaCumpleanio',["cumple"=>$cumple]);
     }
 
     public function verificarCredenciales(Request $datos)

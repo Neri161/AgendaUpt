@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AgendaController;
+use App\Http\Controllers\CumpleaniosController;
 use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 
@@ -37,6 +38,8 @@ Route::prefix('/usuario')->middleware("VerificarUsuario")->group(function () {
     Route::get('/listacontacto/{id?}', [UsuarioController::class, 'listaContacto'])->name('usuario.lcontacto');
     Route::post('/registrocontacto', [AgendaController::class, 'registro'])->name('rcontacto');
     Route::get('/registrocumple/{id?}', [UsuarioController::class, 'registroCumpleanio'])->name('usuario.rcumple');
+    Route::get('/listacumple/{id?}', [UsuarioController::class, 'listaCumple'])->name('usuario.lcumple');
+    Route::post('/registrocumple', [CumpleaniosController::class, 'registrar'])->name('rcumple');
     Route::get('/registrocita', [UsuarioController::class, 'registroCita'])->name('usuario.rcita');
 });
 
