@@ -92,6 +92,16 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-md-12">
+                    <label for="grupo">Grupo:</label>
+                    <select class="browser-default custom-select" name="grupo" id="grupo">
+                        <option selected="">Selecciona El Grupo</option>
+                        @foreach($grupo as $grupos)
+                            <option value="{{$grupos->id}}">{{$grupos->tipo}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <p></p>
                 <div class="row">
                     <div class="col-md-4 text-center ">
                     </div>

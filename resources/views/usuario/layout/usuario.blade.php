@@ -92,7 +92,7 @@
                     <!--<a class="collapse-item" href=""><i class="fas fa-user-tie"></i>
                             Lista Usuarios
                         </a>-->
-                    <a class="collapse-item" href=""><i class="fas fa-users"></i>
+                    <a class="collapse-item" href="{{route('usuario.lcontacto')}}/{{session('usuario')->id}}"><i class="fas fa-users"></i>
                         Lista Contactos</a>
                     <a class="collapse-item" href=""><i class="fas fa-birthday-cake"></i>
                         Lista Cumpleaños</a>
@@ -187,16 +187,6 @@
                         <!-- Dropdown - User Information -->
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                              aria-labelledby="userDropdown">
-                            <a class="dropdown-item" href="">
-                                <i class="fa fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Perfil
-                            </a>
-                            <a class="dropdown-item" href="">
-                                <i class="fa fa-cog text-gray-400"></i>
-                                Editar perfil
-                            </a>
-
-                            <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Salir

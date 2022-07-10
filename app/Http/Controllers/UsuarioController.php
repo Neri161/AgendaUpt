@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Models\Usuario;
+use App\Models\Agenda;
+use App\Models\Grupo;
 
 
 class UsuarioController extends Controller
@@ -27,7 +29,8 @@ class UsuarioController extends Controller
     }
     public function registroContacto()
     {
-        return view('usuario.registrarContacto');
+        $grupo = Grupo::all();
+        return view('usuario.registrarContacto',["grupo"=>$grupo]);
     }
     public function registroCumpleanio()
     {
@@ -40,6 +43,11 @@ class UsuarioController extends Controller
     public function recuperar()
     {
         return view('recuperar');
+    }
+    public function listaContacto($id)
+    {
+        $contacto = Agenda::where('usuario_id',$id)->get();
+        return view('usuario.listaContacto',["contacto"=>$contacto]);
     }
 
     public function verificarCredenciales(Request $datos)

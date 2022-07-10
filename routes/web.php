@@ -34,6 +34,7 @@ Route::post('/cambio/codigo', [UsuarioController::class, 'cambio'])->name('cambi
 Route::prefix('/usuario')->middleware("VerificarUsuario")->group(function () {
     Route::get('/inicio', [UsuarioController::class, 'inicio'])->name('usuario.inicio');
     Route::get('/registrocontacto', [UsuarioController::class, 'registroContacto'])->name('usuario.rcontacto');
+    Route::get('/listacontacto/{id?}', [UsuarioController::class, 'listaContacto'])->name('usuario.lcontacto');
     Route::post('/registrocontacto', [AgendaController::class, 'registro'])->name('rcontacto');
     Route::get('/registrocumple', [UsuarioController::class, 'registroCumpleanio'])->name('usuario.rcumple');
     Route::get('/registrocita', [UsuarioController::class, 'registroCita'])->name('usuario.rcita');
