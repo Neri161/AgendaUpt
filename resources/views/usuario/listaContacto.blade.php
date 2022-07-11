@@ -26,6 +26,7 @@
                         <th>Direccion</th>
                         <th>Correo</th>
                         <th>Telefono</th>
+                        <th>Grupo</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -37,6 +38,11 @@
                             <td>{{$contactos->Direccion}}</td>
                             <td>{{$contactos->Correo}}</td>
                             <td>{{$contactos->Telefono}}</td>
+                            @foreach($grupo as $grupos)
+                                @if($grupos->id == $contactos->grupo_id)
+                                <td>{{$grupos->tipo}}</td>
+                                @endif
+                            @endforeach
                         </tr>
                     @endforeach
                     </tbody>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\RecuperarMailable;
+use App\Models\Cita;
 use App\Models\Cumpleanios;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
@@ -38,9 +39,10 @@ class UsuarioController extends Controller
         $contacto = Agenda::where('usuario_id',$id)->get();
         return view('usuario.registrarCumpleanio',['contacto'=>$contacto]);
     }
-    public function registroCita()
+    public function registroCita($id)
     {
-        return view('usuario.registrarCita');
+        $contacto = Agenda::where('usuario_id',$id)->get();
+        return view('usuario.registrarCita',['contacto'=>$contacto]);
     }
     public function recuperar()
     {
@@ -49,12 +51,19 @@ class UsuarioController extends Controller
     public function listaContacto($id)
     {
         $contacto = Agenda::where('usuario_id',$id)->get();
-        return view('usuario.listaContacto',["contacto"=>$contacto]);
+        $grupo = Grupo::all();
+
+        return view('usuario.listaContacto',["contacto"=>$contacto,"grupo"=>$grupo]);
     }
     public function listaCumple($id)
     {
         $cumple= Cumpleanios::where('usuario_id',$id)->get();
         return view('usuario.listaCumpleanio',["cumple"=>$cumple]);
+    }
+    public function listaCita($id)
+    {
+        $cita= Cita::where('usuario_id',$id)->get();
+        return view('usuario.listaCita',["cita"=>$cita]);
     }
 
     public function verificarCredenciales(Request $datos)

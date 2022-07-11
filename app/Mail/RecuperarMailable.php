@@ -31,7 +31,7 @@ class RecuperarMailable extends Mailable
      */
     public function build()
     {
-        return $this->subject('E-learning Recuperar Contraseña')
+        return $this->subject('Agenda UPT Recuperar Contraseña')
             ->view('emails.recuperar');
     }
 }

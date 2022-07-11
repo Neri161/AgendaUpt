@@ -71,7 +71,7 @@
                         Agregar Contacto</a>
                     <a class="collapse-item" href="{{route('usuario.rcumple')}}/{{session('usuario')->id}}"><i class="fas fa-birthday-cake"></i>
                         Agregar Cumpleaño</a>
-                    <a class="collapse-item" href="{{route('usuario.rcita')}}"><i class="fas fa-handshake"></i>
+                    <a class="collapse-item" href="{{route('usuario.rcita')}}/{{session('usuario')->id}}"><i class="fas fa-handshake"></i>
                         Agregar Cita</a>
                 </div>
             </div>
@@ -96,7 +96,7 @@
                         Lista Contactos</a>
                     <a class="collapse-item" href="{{route('usuario.lcumple')}}/{{session('usuario')->id}}"><i class="fas fa-birthday-cake"></i>
                         Lista Cumpleaños</a>
-                    <a class="collapse-item" href="{{route('usuario.lcontacto')}}/{{session('usuario')->id}}"><i class="fas fa-handshake"></i>
+                    <a class="collapse-item" href="{{route('usuario.lcita')}}/{{session('usuario')->id}}"><i class="fas fa-handshake"></i>
                         Lista de Citas</a>
                 </div>
             </div>

@@ -21,7 +21,7 @@
                     <thead>
                     <tr>
                         <th>Nombre</th>
-                        <th>Direccion</th>
+                        <th>Fecha</th>
                         <th>Mensaje</th>
                     </tr>
                     </thead>
